@@ -19,26 +19,26 @@ public class CircularArray {
 		int n=0, round =0;
 		Scanner  sc = new Scanner(System.in);
 		System.out.println("enter the round ");
-//		round = sc.nextInt();
+		round = sc.nextInt();
 		
 //		System.out.println(li+"\nsize :: "+li.size());
 		if(n% li.size() ==0) {
-//			System.out.println(li);
-//				return;
+			System.out.println(li);
+				return;
 		}
 		
 		else if(n% li.size() !=0)
 			round = n%li.size();
-		
-		int x = 100000% 82792;
-		
-		System.out.println("% = "+(x));
-//		System.out.println(round);
+//		
+//		int x = 100000% 82792;
+//		
+//		System.out.println("% = "+(x));
+		System.out.println(round);
 //		Circular(li, round);
 		
 
 	}
-	static  List<Integer> Circular(List<Integer> li, int round){
+	static final List<Integer> Circular(List<Integer> li, int round){
 		
 		int i =0;
 		int x =0;
@@ -68,5 +68,10 @@ public class CircularArray {
 			System.out.println(li+"\nround :: "+k);
 		}
 		return li;
+	}
+
+	static List<Integer> Circular(List<Integer> li ){
+		return li;
+		
 	}
 }
