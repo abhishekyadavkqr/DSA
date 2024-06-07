@@ -13,7 +13,7 @@ public class Test01 extends Thread {
 	public static void main(String[] args) {
 		System.out.println("main start");
 		Test01 t1 = new Test01();
-	t1.start();
+	t1.start();	
 	System.out.println("main end");
 	
 	}
