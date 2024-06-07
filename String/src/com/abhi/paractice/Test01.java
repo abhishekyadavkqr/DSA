@@ -1,10 +1,9 @@
 package com.abhi.paractice;
 
-import java.io.Console;
-import java.util.Scanner;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
 
 public class Test01 {
 	static Scanner sc= null;
@@ -17,12 +16,19 @@ public class Test01 {
 //			prj1();
 //			prj2();
 //			prj3();
+
 //			prj4();
 //			prj5();
 //			prj6();
 //			prj7();
-//			prj8(st);
-//			duplicate(st);
+			
+			
+			for (String string : prj8(s)) {
+				System.out.println(string);
+			}
+			
+//				System.out.println(duplicate(s));
+			
 //			prj7();
 //			
 //			Student st = new Student();
@@ -155,25 +161,59 @@ public class Test01 {
 			System.out.println(usn.compareTo("Invalid username or password"));
 	}
 
-	static void prj8(String[] st) {
+	static String[] prj8(String[] st) {
 		
+		if(st.length==0 || st.length==1)
+			return st;
+		String s = "";
+		int length = st.length;
+		
+		for(int i=0;i<st.length;i++) {
+			for(int j =0; j<length; j++)
+			{
+				if(i==j)
+					continue;
+				if(st[i].compareTo(st[j])<0) {
+					s= st[i];
+					st[i] = st[j];
+					st[j] = s;
+				}
+			}
+			
+		}
+		
+		System.out.println("Duplicate items are : ");
+		System.out.println(duplicate(st)+"\n");
+		System.out.println("Sorted elements are : ");;
+		return st;
 	}
 	
-	static void duplicate(String[] st) throws ReflectiveOperationException, SecurityException {
-		String s = new String("hello");
-		System.out.println(s.length());
-		if(st.length>0)
-		{
-			Class<?> c = s.getClass();
-			Field f = c.getDeclaredField("value");
-			f.setAccessible(true);
-			
-			Object bt = f.get(st);
-			System.out.println(bt);
-				
-			}
+	static Object duplicate(String[] st)  {
 		
-		System.out.println(s);
+		if(st.length==0 || st.length==1)
+		{
+			return st;
+			}
+		Set<String> res = new HashSet<String>();
+		String s = "";
+		
+		for(int i=0; i<st.length;i++)
+		{
+			s = st[i]; 
+			for(int j=0 ; j<st.length;j++) {
+				if(i==j)
+					continue;
+				else if(s.equals(st[j])) {
+
+						res.add(s);
+					}
+					
+				}
+					
+			
+		}
+		System.out.println();
+	return res;
 	}
 
 }
