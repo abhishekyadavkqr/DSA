@@ -12,7 +12,7 @@ public class Test01 {
 		
 		try{
 			sc = new Scanner(System.in);
-			String[] s = {"Apple", "Banana", "Orange","Banana","Orange"}; 
+			String[] s = {"abc", "xyz", "a","bbc","b","a","b"}; 
 //			prj1();
 //			prj2();
 //			prj3();
@@ -22,10 +22,10 @@ public class Test01 {
 //			prj6();
 //			prj7();
 			
-			
-			for (String string : prj8(s)) {
-				System.out.println(string);
-			}
+//			
+//			for (String string : prj8(s)) {
+//				System.out.println(string);
+//			}
 			
 //				System.out.println(duplicate(s));
 			
@@ -56,7 +56,8 @@ public class Test01 {
 ////					
 ////			System.out.println();
 ////			System.out.println(con);
-			
+//			p9("java Hari");
+			p10("java Hzasrfiea");
 			
 			
 	}catch(Exception e) {
@@ -216,5 +217,42 @@ public class Test01 {
 	return res;
 	}
 
+
+static void p9(String str) {
+	
+	if(str.toLowerCase().contains("hari")) {
+		String[] s = str.split(" ");
+		for (String string : s) {
+			 if(string.equalsIgnoreCase("hari")) {
+				 System.out.println(string+ " is availabe...");
+			 }
+		}
+		
+	}
+	else 
+		System.out.println("hari is not available");
+	
 }
 
+ static void p10(String s){
+	 int h =0,a=0,r=0,j=0;
+	 s=s.toLowerCase();
+	 for (int i =0; i<s.length();i++) {
+		 if(s.charAt(i)=='h')
+			 h++;
+		 else if(s.charAt(i)=='a')
+			 a++;
+		 else if(s.charAt(i)=='r')
+			 r++;
+		 else if(s.charAt(i)=='i')
+			 j++;
+	 }
+	 if(h!=0 && a!=0 && r!=0 && j!=0)
+		 System.out.println("Hari is Available...");
+	 else
+		 System.out.println("Hari is  Not Available...");
+		 
+ }
+
+ 
+}
