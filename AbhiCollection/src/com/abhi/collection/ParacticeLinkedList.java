@@ -11,8 +11,14 @@ public class ParacticeLinkedList {
 		
 		List<?> li =ParacticeArrayList.getArrayList();
 		linkList.addAll(li);
+		String st = "this is updated..";
+
 		
-		
+		linkList.set(5,"this is updated..");
+		int x = linkList.indexOf(st);
+		x = x>=0?x:0;
+//		System.out.println(linkList.remove(st));
+		System.out.println(linkList.set(x ,"hello"));
 		System.out.println("LinkList:\t" + linkList);
 	}
 }
